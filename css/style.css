@@ -1,0 +1,244 @@
+:root {
+  --primary: #4da6ff;
+  --primary-dark: #0077ed;
+  --bg-light: #f8fbff;
+  --text-main: #2d3436;
+  --text-muted: #636e72;
+  --glass: rgba(255, 255, 255, 0.8);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif; /* Modern tech font stack */
+  line-height: 1.7;
+  color: var(--text-main);
+  background-color: #ffffff;
+}
+
+/* Professional Typography */
+h1, h2, h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+
+/**************** Nav Section **********************/
+nav {
+  background: var(--glass);
+  backdrop-filter: blur(10px); /* Modern blur effect */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1.2rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(77, 166, 255, 0.1);
+}
+
+nav p { margin: 0; font-weight: 800; font-size: 1.2rem; color: var(--primary); }
+
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover { color: var(--primary); }
+
+/*********** Hero / Splash Page ************************/
+header {
+  text-align: center;
+  padding: 6rem 1rem 4rem;
+  background: radial-gradient(circle at top right, #e6f2ff, #ffffff);
+}
+
+header h1 {
+  font-size: 4rem; 
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #1a1a1a, var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header img {
+  border-radius: 24px; /* Modern "Squircle" instead of a circle */
+  border: none;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.address {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  max-width: 700px;
+  margin: 1.5rem auto;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/************* Sections ********************/
+section {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+section h2::after {
+  content: "";
+  height: 2px;
+  flex-grow: 1;
+  background: linear-gradient(to right, var(--primary), transparent);
+}
+
+/* Grid for Education/Experience */
+dl {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Title takes all space, Date fits itself */
+  align-items: baseline;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+dt {
+  font-weight: 700;
+  color: var(--primary-dark);
+  white-space: nowrap; /* Prevents title from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds '...' if the screen is extremely small */
+}
+
+dd {
+  margin: 0;
+  color: var(--text-muted);
+  white-space: nowrap; /* Prevents dates from wrapping */
+  text-align: right;
+}
+/* Skills Badges */
+section ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+section ul li {
+  background: #f0f7ff;
+  color: var(--primary-dark);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(77, 166, 255, 0.2);
+}
+
+/************** Projects   *****************/
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid #f0f0f0;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(77, 166, 255, 0.15);
+  border-color: var(--primary);
+}
+
+.card h3 { padding: 1.5rem 1.5rem 0.5rem; margin: 0; }
+.card ul { padding: 0 1.5rem 1.5rem; }
+
+/************** Contact & Forms   *****************/
+.one-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the Heading and the Form horizontally */
+  text-align: center;
+  width: 100%;
+  margin: 4rem auto;
+}
+
+.one-col h2 {
+    width: 100%;
+    max-width: 500px; /* Matches the form width for a clean look */
+    margin-bottom: 2rem;
+}
+
+.one-col form {
+  background: var(--bg-light); /* Uses the professional light blue theme */
+  padding: 3rem;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 500px; /* Keeps the box from getting too wide */
+  margin: 0 auto; /* Centers the box itself */
+  text-align: left; /* Keeps labels and inputs left-aligned for readability */
+  box-shadow: var(--shadow); /* Adds depth like the project cards */
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border: 1px solid #d1d9e0;
+  border-radius: 12px;
+  background: white;
+  transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(77, 166, 255, 0.1);
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover { background: var(--primary-dark); }
+
+/************** Footer   *****************/
+footer {
+  margin-top: 6rem;
+  padding: 4rem;
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+}
+
+footer a { color: var(--primary); text-decoration: none; }
